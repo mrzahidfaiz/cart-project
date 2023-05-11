@@ -3,11 +3,13 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import routes from "./routes";
+import CartProvider from "./Contexts/CartProvide";
 
 const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
+      <CartProvider>
         <Layout>
           <Routes>
             {routes.map((route, index) => {
@@ -21,6 +23,7 @@ const App = () => {
             })}
           </Routes>
         </Layout>
+        </CartProvider>
       </BrowserRouter>
     </div>
   );
