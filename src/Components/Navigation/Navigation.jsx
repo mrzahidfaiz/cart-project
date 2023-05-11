@@ -5,8 +5,10 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoHome } from "react-icons/go";
 import brand_logo from "./brand_logo.jpg";
+import { useCart } from "../../Contexts/CartProvide";
 
 const Navigation = () => {
+    const { cart } = useCart();
   return (
     <header className="headerContainer">
       <nav>
@@ -28,8 +30,8 @@ const Navigation = () => {
         </div>
         <div>
           <NavLink to="/cart">
-            <h1 to="/cart">
-              <AiOutlineShoppingCart />
+            <h1>
+              <AiOutlineShoppingCart /><span className="cart_span">{cart.length}</span>
             </h1>
           </NavLink>
         </div>

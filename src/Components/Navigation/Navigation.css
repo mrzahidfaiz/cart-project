@@ -58,6 +58,7 @@ input[type=text] {
     background-color: white;
     font-size: 2rem;
     font-weight: bold;
+
 }
 
 .login_signup_btn {
@@ -73,4 +74,11 @@ input[type=text] {
     border-radius: 0.4rem;
     font-size: 1.5rem !important;
     min-width: 10rem;
+}
+
+
+.cart_span {
+    font-size: 1.5rem;
+    border-radius: 50%;
+    text-decoration: none;
 }

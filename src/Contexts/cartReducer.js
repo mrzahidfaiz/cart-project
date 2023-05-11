@@ -7,7 +7,7 @@ const cartReducer = (state, action) => {
       const index = updatedCart.findIndex((item) => item.id === action.payload.id);
       //console.log(index);
       if (index < 0) {
-        updatedCart.push({ ...action.payload });
+        updatedCart.push({ ...action.payload, quantity: 1 });
       } else {
         console.log("Already In Cart");
       }
