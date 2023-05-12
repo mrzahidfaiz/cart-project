@@ -2,12 +2,20 @@ import React from "react";
 import "./CartPage.css";
 import { useCart } from "../../Contexts/CartProvide";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { useCartAction } from "../../Contexts/CartProvide";
 
 const CartPage = () => {
   const { cart } = useCart();
+  const dispatch = useCartAction();
   if (!cart.length) {
-    return <div>Cart is empty!</div>;
+    return <div className="empty_Cart">Cart is empty!</div>;
   }
+  const incrementHanlder = (cartItem) => {
+    dispatch({ type: "ADD_TO_CART", payload: cartItem });
+  };
+  const decrementHandler = (cartItem) => {
+    dispatch({ type: "DECREMENT", payload: cartItem });
+  };
   return (
     <main className="container">
       <section className="cartCenter">
@@ -27,11 +35,11 @@ const CartPage = () => {
                   </span>
                 </div>
                 <div className="itemControl">
-                  <button>
+                  <button onClick={() => incrementHanlder(item)}>
                     <AiOutlinePlus />
                   </button>
                   {item.quantity}
-                  <button>
+                  <button onClick={() => decrementHandler(item)}>
                     <AiOutlineMinus />
                   </button>
                 </div>
