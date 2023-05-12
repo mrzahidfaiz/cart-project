@@ -60,8 +60,6 @@
     background-color: white;
   }
   .cartSummary {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 30%;
     border: 1px solid #ddd;
@@ -73,3 +71,12 @@
     font-size: 4rem;
     padding: 2rem 6rem;
   }
+
+  .summaryBtn {
+    margin-top: 0.5rem;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    
+  };

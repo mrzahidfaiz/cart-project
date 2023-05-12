@@ -3,9 +3,10 @@ import "./CartPage.css";
 import { useCart } from "../../Contexts/CartProvide";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useCartAction } from "../../Contexts/CartProvide";
+import CartSummary from "./CartSummary";
 
 const CartPage = () => {
-  const { cart } = useCart();
+  const { cart, total } = useCart();
   const dispatch = useCartAction();
   if (!cart.length) {
     return <div className="empty_Cart">Cart is empty!</div>;
@@ -47,10 +48,13 @@ const CartPage = () => {
             );
           })}
         </section>
-        <section className="cartSummary">Order Summary</section>
+        <CartSummary total={total} />
       </section>
     </main>
   );
 };
 
 export default CartPage;
+
+
+

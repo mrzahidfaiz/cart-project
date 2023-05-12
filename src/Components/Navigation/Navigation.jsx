@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import { BsSearch } from "react-icons/bs";
@@ -22,8 +22,8 @@ const Navigation = () => {
         </div>
         <div>
           <form className="searchForm">
-            <input type="text" placeholder="Search..." />
-            <button type="submit">
+            <input type="text" placeholder="Search..." ref={InputRef} />
+            <button>
               <BsSearch />
             </button>
           </form>
